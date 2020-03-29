@@ -1,0 +1,28 @@
+{
+  "name": "build-intro",
+  "version": "1.0.0",
+  "description": "Introduction to build pipelines in JavaScript, using Webpack and Babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dans-mad@github.com/dans-mad/build-intro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dans-mad/build-intro/issues"
+  },
+  "homepage": "https://github.com/dans-mad/build-intro#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}
