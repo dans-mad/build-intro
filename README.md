@@ -1,10 +1,13 @@
 # build-intro
 Introduction to build pipelines in JavaScript, using Webpack and Babel
 
+## Build pipelines
+Up until now, we have been working on single html, css and JavaScript files. On larger projects it is necessary to split code into many smaller files when writing it, but then you need to package it back together before you use it in a web page. A _build pipeline_ lets you do this. It also lets you do other things - linting and formatting, inserting environment variables into code templates, generating separate development and production versions of an app, and much more.
+
 ## Transpiling
 [Transpiling](https://en.wikipedia.org/wiki/Source-to-source_compiler) - often referred to (slightly inaccurately) as compiling - means turning your source code into different source code which does exactly the same thing. The main reason you will want to do this is so that you can write code using modern JavaScript, but still have it run on older browsers. You can also transpile from languages 
 
-## Build pipelines
+
 
 ## Prerequisites
  * VSCode, node and npm installed
