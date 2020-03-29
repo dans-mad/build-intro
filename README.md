@@ -16,18 +16,18 @@ Introduction to build pipelines in JavaScript, using Webpack and Babel
  * Install the Babel runtime polyfills: `npm install --save @babel/polyfill` Note that this time we used `--save` instead of `--save-dev`: packages installed using `save-dev` are developer tools used while writing/formatting/testing etc, whereas packages installed using `save` are available at runtime, i.e. inside the web page you're building.
  * Creating a config file named `babel.config.json` and add the following code:
  ```
- {
+{
   "presets": [
     [
       "@babel/env",
       {
         "targets": {
-          "edge": "17",
-          "firefox": "60",
-          "chrome": "67",
-          "safari": "11.1",
+          "edge": "10",
+          "firefox": "50",
+          "chrome": "50",
+          "safari": "10"
         },
-        "useBuiltIns": "usage",
+        "useBuiltIns": "usage"
       }
     ]
   ]
