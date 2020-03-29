@@ -49,7 +49,10 @@ We will be using _Babel_, which is the most widely used transpiling tool and can
 * Run `./node_modules/.bin/babel index.js --out-dir output` and then look at `output/index.js` again - it's changed, still not the same as your code, but it now uses an arrow function (`=>`) and object destructuring (`let { destructuredParameter } = _ref;`) because the newer version of the Edge browser supports both of these features.
 
 ### Exercise 2 - Build pipelines using Webpack
- * 
+ * Check out the `webpack` branch: `git checkout webpack`
+ * Install all package dependencies: `npm install` 
+ * Install Lodash `npm install --save lodash` - Lodash is a package with loads of utility functions in it. We'll learn about them later...
+ * Install Webpack: 
 
 ### Additional Exercise
 
