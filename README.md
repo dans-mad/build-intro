@@ -19,9 +19,6 @@ We will be using _Webpack_ to create a build pipeline. This is the most popular 
 
 We will be using _Babel_, which is the most widely used transpiling tool and can also be used easily from _Webpack_.
 
-
-
-
 ### Setting up the Babel npm project
  * Fork and checkout this repo https://github.com/dans-mad/build-intro/
  * In the `build-intro` directory that you just checked out, run `npm install` to download the project's dependencies to `node_modules` 
