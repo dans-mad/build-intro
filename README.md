@@ -28,25 +28,25 @@ We will be using _Babel_, which is the most widely used transpiling tool and can
  1. Install the Babel runtime polyfills: `npm install --save @babel/polyfill`
     * Note that this time we used `--save` instead of `--save-dev`: packages installed using `save-dev` are developer tools used while writing/formatting/testing etc, whereas packages installed using `save` are available at runtime, i.e. inside the web page you're building.
  1. Creating a config file named `babel.config.json` and add the following code:
- ```
-{
-  "presets": [
-    [
-      "@babel/env",
-      {
-        "targets": {
-          "edge": "10",
-          "firefox": "60",
-          "chrome": "67",
-          "safari": "11.1"
-        },
-        "useBuiltIns": "usage"
-      }
-    ]
-  ]
-}
-```
-4. Run the following command: `./node_modules/.bin/babel index.js --out-dir dist`
+    ```
+    {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "edge": "10",
+              "firefox": "60",
+              "chrome": "67",
+              "safari": "11.1"
+            },
+            "useBuiltIns": "usage"
+          }
+        ]
+      ]
+    }
+    ```
+1. Run the following command: `./node_modules/.bin/babel index.js --out-dir dist`
 1. Open `index.js` in your project's root directory, and also `dist/index.js`
     * Compare the two. The two quite different blocks of code do exactly the same thing, but the one in dist is written in a way that older browsers can understand.
 1. Change the first browser preset in `babel.config.json` from `"edge": "10"` to `"edge": "17"`
