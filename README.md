@@ -20,13 +20,14 @@ We will be using _Webpack_ to create a build pipeline. This is the most popular 
 We will be using _Babel_, which is the most widely used transpiling tool and can also be used easily from _Webpack_.
 
 ### Setting up the Babel npm project
- * Fork and checkout this repo https://github.com/dans-mad/build-intro/
- * In the `build-intro` directory that you just checked out, run `npm install` to download the project's dependencies to `node_modules` 
+ 1. Fork and checkout this repo https://github.com/dans-mad/build-intro/
+ 1. In the `build-intro` directory that you just checked out, run `npm install` to download the project's dependencies to `node_modules` 
  
 ### Transpiling using Babel
- * Install the Babel tools: `npm install --save-dev @babel/core @babel/cli @babel/preset-env`
- * Install the Babel runtime polyfills: `npm install --save @babel/polyfill` Note that this time we used `--save` instead of `--save-dev`: packages installed using `save-dev` are developer tools used while writing/formatting/testing etc, whereas packages installed using `save` are available at runtime, i.e. inside the web page you're building.
- * Creating a config file named `babel.config.json` and add the following code:
+ 1. Install the Babel tools: `npm install --save-dev @babel/core @babel/cli @babel/preset-env`
+ 1. Install the Babel runtime polyfills: `npm install --save @babel/polyfill`
+    * Note that this time we used `--save` instead of `--save-dev`: packages installed using `save-dev` are developer tools used while writing/formatting/testing etc, whereas packages installed using `save` are available at runtime, i.e. inside the web page you're building.
+ 1. Creating a config file named `babel.config.json` and add the following code:
  ```
 {
   "presets": [
@@ -45,10 +46,12 @@ We will be using _Babel_, which is the most widely used transpiling tool and can
   ]
 }
 ```
-* Run the following command: `./node_modules/.bin/babel index.js --out-dir output`
-* Open `index.js` in your project's root directory, and also `output/index.js`. Compare the two. The two quite different blocks of code do exactly the same thing, but the one in output is written in a way that older browsers can understand.
-* Change the first browser preset in `babel.config.json` from `"edge": "10"` to `"edge": "17"`
-* Run `./node_modules/.bin/babel index.js --out-dir output` and then look at `output/index.js` again - it's changed, still not the same as your code, but it now uses an arrow function (`=>`) and object destructuring (`let { destructuredParameter } = _ref;`) because the newer version of the Edge browser supports both of these features.
+1. Run the following command: `./node_modules/.bin/babel index.js --out-dir dist`
+1. Open `index.js` in your project's root directory, and also `dist/index.js`
+    * Compare the two. The two quite different blocks of code do exactly the same thing, but the one in dist is written in a way that older browsers can understand.
+1. Change the first browser preset in `babel.config.json` from `"edge": "10"` to `"edge": "17"`
+1. Run `./node_modules/.bin/babel index.js --out-dir dist` and then look at `dist/index.js` again.
+    * The code in there has changed: still not the same as your code, but it now uses an arrow function (`=>`) and object destructuring (`let { destructuredParameter } = _ref;`) because the newer version of the Edge browser supports both of these features.
 
 ## Webpack
 Webpack is a very powerful, but initially failry simple, tool for creating build pipelines for (mainly) JavaScript projects.
@@ -98,8 +101,8 @@ module.exports = {
  * Save `package.json` and then run webpack by typing `npm run build` - this should have exactly the same result as when you ran `ngx webpack` earlier.
  * Run Webpack again - `npm run build`
  * This time instead of `dist/main.js` Webpack generates `dist/index.js`, because of the `filename` parameter in your Webpack config.
- * Change the next line in the config to `path: path.resolve(__dirname, 'output'),`
- * Run `npx webpack` again and this time you'll see that the file created is `output\index.js`
+ * Change the next line in the config to `path: path.resolve(__dirname, 'dist'),`
+ * Run `npx webpack` again and this time you'll see that the file created is `dist\index.js`
  * You may have noticed a yellow warning, _The 'mode' option has not been set, webpack will fallback to 'production' for this value..._. Let's fix that!
  * Add a key value pair `mode: 'development'` to `webpack.config.js` so that the object assigned to `module.exports` looks like this:
  ```
