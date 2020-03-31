@@ -135,14 +135,16 @@ Webpack is a very powerful, but initially failry simple, tool for creating build
 
 ### Running a development server in Webpack
 Until now, we have run a website locally by running `http-server`. Webpack has its own local webserver, which lets you see the changes in your page every time you edit the code. Let's set it up...
+1. Install the Webpack dev server: `npm install webpack-dev-server --save-dev`
 1. Add a new key to `webpack.config.js` named `devServer`:
-```
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000
-  }
-```
+    ```
+      devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000
+      }
+    ```
+1. 
 
 ### Webpack plugins
 A lot of Webpack's power comes from the many plugins you can use to extend it. 
